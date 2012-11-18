@@ -1,0 +1,561 @@
+﻿<SERVERS>
+
+<SERVER name="https://dev022.service-now.com/" recordcachetime="300">
+		<!--username='admin' password='admin' login='change_request'>-->
+		<!-- <TABLE name="u_mr_incident" filter="0"  keyfields="inc_sys_id" modifyfields="inc_sys_updated_on" countfield="inc_sys_id" >
+			<FIELD name="state" datatype="keyword">
+				<OPTION value="1">Open</OPTION>
+				<OPTION value="7">Closed</OPTION>
+			</FIELD>
+			<FIELD name="priority" datatype="keywordnum">
+				<OPTION value="1">1 - Critical</OPTION>
+				<OPTION value="2">2 - High</OPTION>
+				<OPTION value="3">3 - Medium</OPTION>
+				<OPTION value="4">4 - Low</OPTION>
+			</FIELD>
+			<FIELD name="urgency" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+			<FIELD name="impact" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+		</TABLE> -->
+		<TABLE name="incident" filter="0" countfield="active">
+			<FIELD name="sys_id" label="Key" size="64"/>
+			<FIELD name="sys_updated_on" label="LastModified" datatype="date"/>
+ 			<FIELD name="state" datatype="keyword">
+				<OPTION value="1">Open</OPTION>
+				<OPTION value="2">Closed</OPTION>
+			</FIELD>
+           <!--             <FIELD name="priority" datatype="keywordnum">
+                                                                <OPTION value="1">1 - Critical</OPTION>
+                                                                <OPTION value="2">2 - High</OPTION>
+                                                                <OPTION value="3">3 - Medium</OPTION>
+                                                                <OPTION value="4">4 - Low</OPTION>
+                                                </FIELD>
+                                                <FIELD name="urgency" datatype="keywordnum">
+                                                                <OPTION value="1">1 - High</OPTION>
+                                                                <OPTION value="2">2 - Medium</OPTION>
+                                                                <OPTION value="3">3 - Low</OPTION>
+                                                </FIELD>
+                                                <FIELD name="impact" datatype="keywordnum">
+                                                                <OPTION value="1">1 - High</OPTION>
+                                                                <OPTION value="2">2 - Medium</OPTION>
+                                                                <OPTION value="3">3 - Low</OPTION>
+                                                </FIELD>-->
+			<!-- <FIELD name="active"/>-->
+			<FIELD name="short_description" label="Description" required="1"/>
+		</TABLE>
+		<!-- <TABLE name="core_company"/>
+		<TABLE name="sys_user"/>
+		<TABLE name="sys_user_group"/>
+		<TABLE name="sys_user_list"/>
+		<TABLE name="sys_user_grmember"/>
+		<TABLE name="cmdb_ci">
+			 <FIELD name="purchase_date" datatype="date"/>
+			<FIELD name="install_date" datatype="date"/>
+			<FIELD name="warranty_expiration" datatype="date"/>
+			<FIELD name="assigned" datatype="date"/>
+			<FIELD name="sys_class_name" datatype="keyword"> 
+ 				<OPTION value="1">Accessory</OPTION>
+				<OPTION value="2">AIX Server</OPTION>
+				<OPTION value="3">Application</OPTION>
+				<OPTION value="4">Application Server</OPTION>
+				<OPTION value="5">Application Software</OPTION>
+				<OPTION value="6">BEA Weblogic</OPTION>
+				<OPTION value="7">Business Process</OPTION>
+				<OPTION value="8">Business Service</OPTION>
+				<OPTION value="9">Circuit</OPTION>
+				<OPTION value="10">Cluster</OPTION>
+				<OPTION value="11">Cluster Node</OPTION>
+				<OPTION value="12">Cluster Resource</OPTION>
+				<OPTION value="13">Cluster Virtual IP</OPTION>
+				<OPTION value="14">Communication Device</OPTION> 
+				<OPTION value="cmdb_ci_computer">Computer</OPTION> 
+ 				<OPTION value="16">Computer Peripheral</OPTION>
+				<OPTION value="17">Computer Room</OPTION>
+				<OPTION value="18">Computer Room AC</OPTION>
+				<OPTION value="19">Configuration Item</OPTION>
+				<OPTION value="20">Data Center</OPTION>
+				<OPTION value="21">Data Center Zone</OPTION>
+				<OPTION value="22">Database</OPTION>
+				<OPTION value="23">Database Catalog</OPTION>
+				<OPTION value="24">Database Instance</OPTION>
+				<OPTION value="25">DB2 Catalog</OPTION>
+				<OPTION value="26">DB2 Instance</OPTION>
+				<OPTION value="27">Desktop Software</OPTION>
+				<OPTION value="28">Desktop Software</OPTION>
+				<OPTION value="29">Directory Server</OPTION>
+				<OPTION value="30">Disk</OPTION>
+				<OPTION value="31">DNS Name</OPTION>
+				<OPTION value="32">Domino</OPTION>
+				<OPTION value="33">Email Server</OPTION>
+				<OPTION value="34">ESX Resource Pool</OPTION>
+				<OPTION value="35">ESX Server</OPTION>
+				<OPTION value="36">Exit Interface Routing Rule</OPTION>
+				<OPTION value="37">File System</OPTION>
+				<OPTION value="38">FTP Server</OPTION>
+				<OPTION value="39">Group</OPTION>
+				<OPTION value="40">Hardware</OPTION>
+				<OPTION value="41">HPUX Server</OPTION>
+				<OPTION value="42">IBM Mainframe</OPTION>
+				<OPTION value="43">IBM Mainframe LPAR</OPTION>
+				<OPTION value="44">IBM Websphere</OPTION>
+				<OPTION value="45">Infrastructure Service</OPTION>
+				<OPTION value="46">Infrastructure Software</OPTION>
+				<OPTION value="47">IP Address</OPTION>
+				<OPTION value="48">IP Device</OPTION>
+				<OPTION value="49">IP Network</OPTION>
+				<OPTION value="50">IP Phone</OPTION>
+				<OPTION value="51">IP Router</OPTION>
+				<OPTION value="52">IP Server</OPTION>
+				<OPTION value="53">IP Service Instance</OPTION>
+				<OPTION value="54">IP Switch</OPTION>
+				<OPTION value="55">JavaServer</OPTION>
+				<OPTION value="56">JBoss</OPTION>
+				<OPTION value="57">LDAP Service</OPTION>
+				<OPTION value="58">Linux Server</OPTION>
+				<OPTION value="59">Memory Module</OPTION>
+				<OPTION value="60">MSFT SQL Catalog</OPTION>
+				<OPTION value="61">MSFT SQL Instance</OPTION>
+				<OPTION value="62">MySQL Catalog</OPTION>
+				<OPTION value="63">MySQL Instance</OPTION>
+				<OPTION value="64">Netware Server</OPTION>
+				<OPTION value="65">Network Adapter</OPTION>
+				<OPTION value="66">Network Gear</OPTION>
+				<OPTION value="67">Network Infrastructure Item</OPTION>
+				<OPTION value="68">Network Traffic</OPTION>
+				<OPTION value="69">Next Hop Routing Rule</OPTION>
+				<OPTION value="70">NFS File system</OPTION>
+				<OPTION value="71">Oracle Catalog</OPTION>
+				<OPTION value="72">Oracle Database Listener</OPTION>
+				<OPTION value="73">Oracle Instance</OPTION>
+				<OPTION value="74">OS/X Server</OPTION>
+				<OPTION value="75">Outlet</OPTION>
+				<OPTION value="76">Parallels</OPTION>
+				<OPTION value="77">Patch</OPTION>
+				<OPTION value="78">PDU</OPTION>
+				<OPTION value="79">Print Queue</OPTION>
+				<OPTION value="80">Printer</OPTION>
+				<OPTION value="81">Rack</OPTION>
+				<OPTION value="82">Router Interface</OPTION>
+				<OPTION value="83">Server</OPTION>
+				<OPTION value="84">SMB File System</OPTION>
+				<OPTION value="85">SNC Component</OPTION>
+				<OPTION value="cmdb_ci_spkg">Software</OPTION>  
+				<OPTION value="87">Solaris Server</OPTION>
+				<OPTION value="88">Storage Device</OPTION>
+				<OPTION value="89">Switch Forwarding Rule</OPTION>
+				<OPTION value="90">Switch Partition</OPTION>
+				<OPTION value="91">Switchport</OPTION>
+				<OPTION value="92">Sybase Catalog</OPTION>
+				<OPTION value="93">Sybase Instance</OPTION>
+				<OPTION value="94">Tomcat</OPTION>
+				<OPTION value="95">Tomcat Connector</OPTION>
+				<OPTION value="96">UNIX Daemon</OPTION>
+				<OPTION value="97">UNIX Server</OPTION>
+				<OPTION value="98">UPS</OPTION>
+				<OPTION value="99">UPS Alarm</OPTION>
+				<OPTION value="100">UPS Bypass</OPTION>
+				<OPTION value="101">UPS Input</OPTION>
+				<OPTION value="102">UPS Output</OPTION>
+				<OPTION value="103">Virtual Machine</OPTION>
+				<OPTION value="104">Virtual Machine Instance</OPTION>
+				<OPTION value="105">Virtual Private Network</OPTION>
+				<OPTION value="106">VMware</OPTION>
+				<OPTION value="107">VMware vCenter Instance</OPTION>
+				<OPTION value="108">Web Application</OPTION>
+				<OPTION value="109">Web Server</OPTION>
+				<OPTION value="110">Web Service</OPTION>
+				<OPTION value="111">Web Site</OPTION>
+				<OPTION value="112">Websphere Cell</OPTION>
+				<OPTION value="113">Windows Cluster </OPTION>
+				<OPTION value="114">Windows Cluster Node</OPTION>
+				<OPTION value="115">Windows Cluster Resource</OPTION>
+				<OPTION value="116">Windows Server</OPTION>
+				<OPTION value="117">Windows Service</OPTION>
+				<OPTION value="118">Wire</OPTION>
+				<OPTION value="119">Zones</OPTION> 
+			</FIELD>
+		</TABLE> -->
+		<!-- <TABLE name="cmdb_model"/> -->
+		<!-- <TABLE name="sys_choice"/> 
+		<TABLE name="sys_choice_list"/>
+		<TABLE name="cmn_location"/>-->
+		<!-- <TABLE name="cmn_department"/>
+		<TABLE name="change_request"/>
+		<TABLE name="problem"/> 
+		<TABLE name="change_request_metric" keyfields="chg_sys_id" modifyfields="chg_sys_updated_on" countfield="chg_sys_id"/>
+		<TABLE name="u_mr_batchform"/>
+		<TABLE name="u_mr_receiveform"/>
+		<TABLE name="ast_po"/>
+		<TABLE name="priority_lookup"/> -->
+</SERVER>
+
+
+
+
+
+
+	<SERVER name="https://mobilereach.service-now.com/" recordcachetime="300">
+		<!--username='admin' password='admin' login='change_request'>-->
+		<TABLE name="u_mr_incident" filter="0"  keyfields="inc_sys_id" modifyfields="inc_sys_updated_on" countfield="inc_sys_id" >
+			<FIELD name="state" datatype="keyword">
+				<OPTION value="1">Open</OPTION>
+				<OPTION value="2">Closed</OPTION>
+			</FIELD>
+			<FIELD name="priority" datatype="keywordnum">
+				<OPTION value="1">1 - Critical</OPTION>
+				<OPTION value="2">2 - High</OPTION>
+				<OPTION value="3">3 - Medium</OPTION>
+				<OPTION value="4">4 - Low</OPTION>
+			</FIELD>
+			<FIELD name="urgency" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+			<FIELD name="impact" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+		</TABLE>
+		<TABLE name="incident" filter="0" countfield="active">
+			<FIELD name="sys_id" label="Key" size="64"/>
+			<FIELD name="sys_updated_on" label="LastModified" datatype="date"/>
+ 			<FIELD name="state" datatype="keyword">
+				<OPTION value="1">Open</OPTION>
+				<OPTION value="2">Closed</OPTION>
+			</FIELD>
+                        <FIELD name="priority" datatype="keywordnum">
+                                                                <OPTION value="1">1 - Critical</OPTION>
+                                                                <OPTION value="2">2 - High</OPTION>
+                                                                <OPTION value="3">3 - Medium</OPTION>
+                                                                <OPTION value="4">4 - Low</OPTION>
+                                                </FIELD>
+                                                <FIELD name="urgency" datatype="keywordnum">
+                                                                <OPTION value="1">1 - High</OPTION>
+                                                                <OPTION value="2">2 - Medium</OPTION>
+                                                                <OPTION value="3">3 - Low</OPTION>
+                                                </FIELD>
+                                                <FIELD name="impact" datatype="keywordnum">
+                                                                <OPTION value="1">1 - High</OPTION>
+                                                                <OPTION value="2">2 - Medium</OPTION>
+                                                                <OPTION value="3">3 - Low</OPTION>
+                                                </FIELD>
+			<FIELD name="active"/>
+			<FIELD name="short_description" label="Description" required="1"/>
+		</TABLE>
+		<TABLE name="core_company"/>
+		<TABLE name="sys_user"/>
+		<TABLE name="sys_user_group"/>
+		<TABLE name="sys_user_list"/>
+		<TABLE name="sys_user_grmember"/>
+		<TABLE name="cmdb_ci">
+			<FIELD name="purchase_date" datatype="date"/>
+			<FIELD name="install_date" datatype="date"/>
+			<FIELD name="warranty_expiration" datatype="date"/>
+			<FIELD name="assigned" datatype="date"/>
+			<FIELD name="sys_class_name" datatype="keyword">
+<!-- 				<OPTION value="1">Accessory</OPTION>
+				<OPTION value="2">AIX Server</OPTION>
+				<OPTION value="3">Application</OPTION>
+				<OPTION value="4">Application Server</OPTION>
+				<OPTION value="5">Application Software</OPTION>
+				<OPTION value="6">BEA Weblogic</OPTION>
+				<OPTION value="7">Business Process</OPTION>
+				<OPTION value="8">Business Service</OPTION>
+				<OPTION value="9">Circuit</OPTION>
+				<OPTION value="10">Cluster</OPTION>
+				<OPTION value="11">Cluster Node</OPTION>
+				<OPTION value="12">Cluster Resource</OPTION>
+				<OPTION value="13">Cluster Virtual IP</OPTION>
+				<OPTION value="14">Communication Device</OPTION> -->
+				<OPTION value="cmdb_ci_computer">Computer</OPTION>
+<!-- 				<OPTION value="16">Computer Peripheral</OPTION>
+				<OPTION value="17">Computer Room</OPTION>
+				<OPTION value="18">Computer Room AC</OPTION>
+				<OPTION value="19">Configuration Item</OPTION>
+				<OPTION value="20">Data Center</OPTION>
+				<OPTION value="21">Data Center Zone</OPTION>
+				<OPTION value="22">Database</OPTION>
+				<OPTION value="23">Database Catalog</OPTION>
+				<OPTION value="24">Database Instance</OPTION>
+				<OPTION value="25">DB2 Catalog</OPTION>
+				<OPTION value="26">DB2 Instance</OPTION>
+				<OPTION value="27">Desktop Software</OPTION>
+				<OPTION value="28">Desktop Software</OPTION>
+				<OPTION value="29">Directory Server</OPTION>
+				<OPTION value="30">Disk</OPTION>
+				<OPTION value="31">DNS Name</OPTION>
+				<OPTION value="32">Domino</OPTION>
+				<OPTION value="33">Email Server</OPTION>
+				<OPTION value="34">ESX Resource Pool</OPTION>
+				<OPTION value="35">ESX Server</OPTION>
+				<OPTION value="36">Exit Interface Routing Rule</OPTION>
+				<OPTION value="37">File System</OPTION>
+				<OPTION value="38">FTP Server</OPTION>
+				<OPTION value="39">Group</OPTION>
+				<OPTION value="40">Hardware</OPTION>
+				<OPTION value="41">HPUX Server</OPTION>
+				<OPTION value="42">IBM Mainframe</OPTION>
+				<OPTION value="43">IBM Mainframe LPAR</OPTION>
+				<OPTION value="44">IBM Websphere</OPTION>
+				<OPTION value="45">Infrastructure Service</OPTION>
+				<OPTION value="46">Infrastructure Software</OPTION>
+				<OPTION value="47">IP Address</OPTION>
+				<OPTION value="48">IP Device</OPTION>
+				<OPTION value="49">IP Network</OPTION>
+				<OPTION value="50">IP Phone</OPTION>
+				<OPTION value="51">IP Router</OPTION>
+				<OPTION value="52">IP Server</OPTION>
+				<OPTION value="53">IP Service Instance</OPTION>
+				<OPTION value="54">IP Switch</OPTION>
+				<OPTION value="55">JavaServer</OPTION>
+				<OPTION value="56">JBoss</OPTION>
+				<OPTION value="57">LDAP Service</OPTION>
+				<OPTION value="58">Linux Server</OPTION>
+				<OPTION value="59">Memory Module</OPTION>
+				<OPTION value="60">MSFT SQL Catalog</OPTION>
+				<OPTION value="61">MSFT SQL Instance</OPTION>
+				<OPTION value="62">MySQL Catalog</OPTION>
+				<OPTION value="63">MySQL Instance</OPTION>
+				<OPTION value="64">Netware Server</OPTION>
+				<OPTION value="65">Network Adapter</OPTION>
+				<OPTION value="66">Network Gear</OPTION>
+				<OPTION value="67">Network Infrastructure Item</OPTION>
+				<OPTION value="68">Network Traffic</OPTION>
+				<OPTION value="69">Next Hop Routing Rule</OPTION>
+				<OPTION value="70">NFS File system</OPTION>
+				<OPTION value="71">Oracle Catalog</OPTION>
+				<OPTION value="72">Oracle Database Listener</OPTION>
+				<OPTION value="73">Oracle Instance</OPTION>
+				<OPTION value="74">OS/X Server</OPTION>
+				<OPTION value="75">Outlet</OPTION>
+				<OPTION value="76">Parallels</OPTION>
+				<OPTION value="77">Patch</OPTION>
+				<OPTION value="78">PDU</OPTION>
+				<OPTION value="79">Print Queue</OPTION>
+				<OPTION value="80">Printer</OPTION>
+				<OPTION value="81">Rack</OPTION>
+				<OPTION value="82">Router Interface</OPTION>
+				<OPTION value="83">Server</OPTION>
+				<OPTION value="84">SMB File System</OPTION>
+				<OPTION value="85">SNC Component</OPTION> -->
+				<OPTION value="cmdb_ci_spkg">Software</OPTION> 
+<!-- 				<OPTION value="87">Solaris Server</OPTION>
+				<OPTION value="88">Storage Device</OPTION>
+				<OPTION value="89">Switch Forwarding Rule</OPTION>
+				<OPTION value="90">Switch Partition</OPTION>
+				<OPTION value="91">Switchport</OPTION>
+				<OPTION value="92">Sybase Catalog</OPTION>
+				<OPTION value="93">Sybase Instance</OPTION>
+				<OPTION value="94">Tomcat</OPTION>
+				<OPTION value="95">Tomcat Connector</OPTION>
+				<OPTION value="96">UNIX Daemon</OPTION>
+				<OPTION value="97">UNIX Server</OPTION>
+				<OPTION value="98">UPS</OPTION>
+				<OPTION value="99">UPS Alarm</OPTION>
+				<OPTION value="100">UPS Bypass</OPTION>
+				<OPTION value="101">UPS Input</OPTION>
+				<OPTION value="102">UPS Output</OPTION>
+				<OPTION value="103">Virtual Machine</OPTION>
+				<OPTION value="104">Virtual Machine Instance</OPTION>
+				<OPTION value="105">Virtual Private Network</OPTION>
+				<OPTION value="106">VMware</OPTION>
+				<OPTION value="107">VMware vCenter Instance</OPTION>
+				<OPTION value="108">Web Application</OPTION>
+				<OPTION value="109">Web Server</OPTION>
+				<OPTION value="110">Web Service</OPTION>
+				<OPTION value="111">Web Site</OPTION>
+				<OPTION value="112">Websphere Cell</OPTION>
+				<OPTION value="113">Windows Cluster </OPTION>
+				<OPTION value="114">Windows Cluster Node</OPTION>
+				<OPTION value="115">Windows Cluster Resource</OPTION>
+				<OPTION value="116">Windows Server</OPTION>
+				<OPTION value="117">Windows Service</OPTION>
+				<OPTION value="118">Wire</OPTION>
+				<OPTION value="119">Zones</OPTION> -->
+			</FIELD>
+		</TABLE>
+		<TABLE name="cmdb_model"/>
+		<TABLE name="sys_choice"/>
+		<TABLE name="sys_choice_list"/>
+		<TABLE name="cmn_location"/>
+		<TABLE name="cmn_department"/>
+		<TABLE name="change_request"/>
+		<TABLE name="problem"/>
+		<TABLE name="change_request_metric" keyfields="chg_sys_id" modifyfields="chg_sys_updated_on" countfield="chg_sys_id"/>
+		<TABLE name="u_mr_batchform"/>
+		<TABLE name="u_mr_receiveform"/>
+		<TABLE name="ast_po"/>
+		<TABLE name="priority_lookup"/>
+</SERVER>	
+	<SERVER name="https://pioneersand.service-now.com/" recordcachetime="300" login="cmn_location">
+		<TABLE name="u_mr_incident" filter="0"  keyfields="inc_sys_id" modifyfields="inc_sys_updated_on" countfield="inc_sys_id" >
+			<FIELD name="priority" datatype="keywordnum">
+				<OPTION value="1">1 - Critical</OPTION>
+				<OPTION value="2">2 - High</OPTION>
+				<OPTION value="3">3 - Medium</OPTION>
+				<OPTION value="4">4 - Low</OPTION>
+			</FIELD>
+			<FIELD name="urgency" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+			<FIELD name="impact" datatype="keywordnum">
+				<OPTION value="1">1 - High</OPTION>
+				<OPTION value="2">2 - Medium</OPTION>
+				<OPTION value="3">3 - Low</OPTION>
+			</FIELD>
+		</TABLE>
+		<TABLE name="core_company"/>
+		<TABLE name="sys_user"/>
+		<TABLE name="sys_user_group"/>
+		<TABLE name="sys_user_list"/>
+		<TABLE name="sys_user_grmember"/>
+		<TABLE name="cmdb_ci">
+			<FIELD name="purchase_date" datatype="date"/>
+			<FIELD name="install_date" datatype="date"/>
+			<FIELD name="warranty_expiration" datatype="date"/>
+			<FIELD name="assigned" datatype="date"/>
+			<FIELD name="sys_class_name" datatype="keyword">
+<!-- 				<OPTION value="1">Accessory</OPTION>
+				<OPTION value="2">AIX Server</OPTION>
+				<OPTION value="3">Application</OPTION>
+				<OPTION value="4">Application Server</OPTION>
+				<OPTION value="5">Application Software</OPTION>
+				<OPTION value="6">BEA Weblogic</OPTION>
+				<OPTION value="7">Business Process</OPTION>
+				<OPTION value="8">Business Service</OPTION>
+				<OPTION value="9">Circuit</OPTION>
+				<OPTION value="10">Cluster</OPTION>
+				<OPTION value="11">Cluster Node</OPTION>
+				<OPTION value="12">Cluster Resource</OPTION>
+				<OPTION value="13">Cluster Virtual IP</OPTION>
+				<OPTION value="14">Communication Device</OPTION> -->
+				<OPTION value="cmdb_ci_computer">Computer</OPTION>
+<!-- 				<OPTION value="16">Computer Peripheral</OPTION>
+				<OPTION value="17">Computer Room</OPTION>
+				<OPTION value="18">Computer Room AC</OPTION>
+				<OPTION value="19">Configuration Item</OPTION>
+				<OPTION value="20">Data Center</OPTION>
+				<OPTION value="21">Data Center Zone</OPTION>
+				<OPTION value="22">Database</OPTION>
+				<OPTION value="23">Database Catalog</OPTION>
+				<OPTION value="24">Database Instance</OPTION>
+				<OPTION value="25">DB2 Catalog</OPTION>
+				<OPTION value="26">DB2 Instance</OPTION>
+				<OPTION value="27">Desktop Software</OPTION>
+				<OPTION value="28">Desktop Software</OPTION>
+				<OPTION value="29">Directory Server</OPTION>
+				<OPTION value="30">Disk</OPTION>
+				<OPTION value="31">DNS Name</OPTION>
+				<OPTION value="32">Domino</OPTION>
+				<OPTION value="33">Email Server</OPTION>
+				<OPTION value="34">ESX Resource Pool</OPTION>
+				<OPTION value="35">ESX Server</OPTION>
+				<OPTION value="36">Exit Interface Routing Rule</OPTION>
+				<OPTION value="37">File System</OPTION>
+				<OPTION value="38">FTP Server</OPTION>
+				<OPTION value="39">Group</OPTION>
+				<OPTION value="40">Hardware</OPTION>
+				<OPTION value="41">HPUX Server</OPTION>
+				<OPTION value="42">IBM Mainframe</OPTION>
+				<OPTION value="43">IBM Mainframe LPAR</OPTION>
+				<OPTION value="44">IBM Websphere</OPTION>
+				<OPTION value="45">Infrastructure Service</OPTION>
+				<OPTION value="46">Infrastructure Software</OPTION>
+				<OPTION value="47">IP Address</OPTION>
+				<OPTION value="48">IP Device</OPTION>
+				<OPTION value="49">IP Network</OPTION>
+				<OPTION value="50">IP Phone</OPTION>
+				<OPTION value="51">IP Router</OPTION>
+				<OPTION value="52">IP Server</OPTION>
+				<OPTION value="53">IP Service Instance</OPTION>
+				<OPTION value="54">IP Switch</OPTION>
+				<OPTION value="55">JavaServer</OPTION>
+				<OPTION value="56">JBoss</OPTION>
+				<OPTION value="57">LDAP Service</OPTION>
+				<OPTION value="58">Linux Server</OPTION>
+				<OPTION value="59">Memory Module</OPTION>
+				<OPTION value="60">MSFT SQL Catalog</OPTION>
+				<OPTION value="61">MSFT SQL Instance</OPTION>
+				<OPTION value="62">MySQL Catalog</OPTION>
+				<OPTION value="63">MySQL Instance</OPTION>
+				<OPTION value="64">Netware Server</OPTION>
+				<OPTION value="65">Network Adapter</OPTION>
+				<OPTION value="66">Network Gear</OPTION>
+				<OPTION value="67">Network Infrastructure Item</OPTION>
+				<OPTION value="68">Network Traffic</OPTION>
+				<OPTION value="69">Next Hop Routing Rule</OPTION>
+				<OPTION value="70">NFS File system</OPTION>
+				<OPTION value="71">Oracle Catalog</OPTION>
+				<OPTION value="72">Oracle Database Listener</OPTION>
+				<OPTION value="73">Oracle Instance</OPTION>
+				<OPTION value="74">OS/X Server</OPTION>
+				<OPTION value="75">Outlet</OPTION>
+				<OPTION value="76">Parallels</OPTION>
+				<OPTION value="77">Patch</OPTION>
+				<OPTION value="78">PDU</OPTION>
+				<OPTION value="79">Print Queue</OPTION>
+				<OPTION value="80">Printer</OPTION>
+				<OPTION value="81">Rack</OPTION>
+				<OPTION value="82">Router Interface</OPTION>
+				<OPTION value="83">Server</OPTION>
+				<OPTION value="84">SMB File System</OPTION>
+				<OPTION value="85">SNC Component</OPTION> -->
+				<OPTION value="cmdb_ci_spkg">Software</OPTION> 
+<!-- 				<OPTION value="87">Solaris Server</OPTION>
+				<OPTION value="88">Storage Device</OPTION>
+				<OPTION value="89">Switch Forwarding Rule</OPTION>
+				<OPTION value="90">Switch Partition</OPTION>
+				<OPTION value="91">Switchport</OPTION>
+				<OPTION value="92">Sybase Catalog</OPTION>
+				<OPTION value="93">Sybase Instance</OPTION>
+				<OPTION value="94">Tomcat</OPTION>
+				<OPTION value="95">Tomcat Connector</OPTION>
+				<OPTION value="96">UNIX Daemon</OPTION>
+				<OPTION value="97">UNIX Server</OPTION>
+				<OPTION value="98">UPS</OPTION>
+				<OPTION value="99">UPS Alarm</OPTION>
+				<OPTION value="100">UPS Bypass</OPTION>
+				<OPTION value="101">UPS Input</OPTION>
+				<OPTION value="102">UPS Output</OPTION>
+				<OPTION value="103">Virtual Machine</OPTION>
+				<OPTION value="104">Virtual Machine Instance</OPTION>
+				<OPTION value="105">Virtual Private Network</OPTION>
+				<OPTION value="106">VMware</OPTION>
+				<OPTION value="107">VMware vCenter Instance</OPTION>
+				<OPTION value="108">Web Application</OPTION>
+				<OPTION value="109">Web Server</OPTION>
+				<OPTION value="110">Web Service</OPTION>
+				<OPTION value="111">Web Site</OPTION>
+				<OPTION value="112">Websphere Cell</OPTION>
+				<OPTION value="113">Windows Cluster </OPTION>
+				<OPTION value="114">Windows Cluster Node</OPTION>
+				<OPTION value="115">Windows Cluster Resource</OPTION>
+				<OPTION value="116">Windows Server</OPTION>
+				<OPTION value="117">Windows Service</OPTION>
+				<OPTION value="118">Wire</OPTION>
+				<OPTION value="119">Zones</OPTION> -->
+			</FIELD>
+		</TABLE>
+		<TABLE name="cmdb_model"/>
+		<TABLE name="sys_choice_list"/>
+		<TABLE name="cmn_location"/>
+		<TABLE name="cmn_department"/>
+		<TABLE name="change_request"/>
+		<TABLE name="problem"/>
+		<TABLE name="change_request_metric" keyfields="chg_sys_id" modifyfields="chg_sys_updated_on" countfield="chg_sys_id"/>
+		<TABLE name="u_mr_batchform"/>
+		<TABLE name="u_mr_receiveform"/>
+		<TABLE name="ast_po"/>
+		<TABLE name="priority_lookup"/>
+</SERVER>	</SERVERS>
